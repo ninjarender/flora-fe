@@ -1,0 +1,42 @@
+export function renderContact() {
+  const el = document.getElementById('contact');
+  el.className = 'section';
+
+  el.innerHTML = `
+    <div class="container">
+      <div class="contact__top">
+        <div class="contact__info">
+          <p class="contact__tagline">Connect</p>
+          <div class="contact__text-block">
+            <h2 class="section-heading">Get in Touch</h2>
+            <p class="section-sub">We're here to assist you with all your floral needs and inquiries.</p>
+          </div>
+        </div>
+        <div class="contact__details">
+          <div class="contact__item">
+            <img class="contact__item-icon" src="/assets/icon-phone.svg" alt="" aria-hidden="true" />
+            <div>
+              <p class="contact__item-label">Phone</p>
+              <a href="tel:+15551234567" class="contact__item-value contact__item-value--link">
+                +1 (555) 123-4567
+              </a>
+            </div>
+          </div>
+          <div class="contact__item">
+            <img class="contact__item-icon" src="/assets/icon-map.svg" alt="" aria-hidden="true" />
+            <div>
+              <p class="contact__item-label">Store</p>
+              <p class="contact__item-value">456 Floral Ave, Sydney NSW 2000 AU</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        class="contact__photo"
+        src="/assets/contact-florist.jpg"
+        alt="Florist holding beautiful flowers in flower shop"
+        loading="lazy"
+      />
+    </div>
+  `;
+}
