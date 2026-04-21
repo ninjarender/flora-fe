@@ -8,12 +8,4 @@ export default defineConfig({
     injectHTML(),
     fullReload('src/partials/**/*.html'),
   ],
-  server: {
-    proxy: {
-      "/api": {
-        target: "https://flora-be.onrender.com",
-        changeOrigin: true,
-      },
-    },
-  },
 });

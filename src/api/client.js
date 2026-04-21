@@ -1,4 +1,4 @@
-const BASE_URL = '/api';
+const BASE_URL = 'https://flora-be.onrender.com';
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE_URL}${path}`, {
