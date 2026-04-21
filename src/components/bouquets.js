@@ -35,22 +35,6 @@ function createProductCard(product, onOpen) {
 }
 
 export async function renderBouquets(onProductOpen) {
-  const el = document.getElementById('bouquets');
-  el.className = 'section';
-
-  el.innerHTML = `
-    <div class="container">
-      <div class="bouquets__header">
-        <h2 class="section-heading">Bouquets</h2>
-        <p class="section-sub">Explore our stunning selection of fresh flower bouquets.</p>
-      </div>
-      <div class="bouquets__grid" id="bouquets-grid"></div>
-      <div class="bouquets__footer">
-        <button class="btn btn--wide" id="bouquets-more">Show More</button>
-      </div>
-    </div>
-  `;
-
   const grid = document.getElementById('bouquets-grid');
   const moreBtn = document.getElementById('bouquets-more');
 

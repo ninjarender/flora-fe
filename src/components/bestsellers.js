@@ -36,31 +36,6 @@ function createProductCard(product, onOpen) {
 }
 
 export async function renderBestsellers(onProductOpen) {
-  const el = document.getElementById('bestsellers');
-  el.className = 'section';
-
-  el.innerHTML = `
-    <div class="container">
-      <div class="bestsellers__header">
-        <h2 class="section-heading">Top-Selling Bouquets</h2>
-      </div>
-      <div class="bestsellers__track-wrap">
-        <div class="bestsellers__track" id="bestsellers-track"></div>
-      </div>
-      <div class="bestsellers__controls">
-        <div class="slider-dots" id="bestsellers-dots"></div>
-        <div style="display:flex;gap:16px;">
-          <button class="slider-arrow" id="bestsellers-prev" aria-label="Previous">
-            <img src="/assets/icon-arrow-left.svg" alt="" width="24" height="24" />
-          </button>
-          <button class="slider-arrow" id="bestsellers-next" aria-label="Next">
-            <img src="/assets/icon-arrow-right.svg" alt="" width="24" height="24" />
-          </button>
-        </div>
-      </div>
-    </div>
-  `;
-
   const track = document.getElementById('bestsellers-track');
   const spinner = document.createElement('div');
   spinner.className = 'spinner';
@@ -74,14 +49,12 @@ export async function renderBestsellers(onProductOpen) {
       track.appendChild(createProductCard(p, onProductOpen));
     });
 
-    const slider = createSlider({
+    createSlider({
       track,
       prevBtn: document.getElementById('bestsellers-prev'),
       nextBtn: document.getElementById('bestsellers-next'),
       dotsEl: document.getElementById('bestsellers-dots'),
-    });
-
-    slider.init();
+    }).init();
   } catch (err) {
     track.innerHTML = `<p style="color:#e53935;padding:16px;">Failed to load bestsellers.</p>`;
     console.error(err);
